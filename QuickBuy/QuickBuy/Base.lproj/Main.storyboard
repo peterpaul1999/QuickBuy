@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuickBuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yOn-xH-caQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBi-aN-Tkd">
+                                <rect key="frame" x="0.0" y="270" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23,99 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZW-Sc-BaH">
+                                <rect key="frame" x="37" y="136" width="300" height="100"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="72"/>
+                                <color key="textColor" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jne-Rg-4Sd" customClass="DropDownButton" customModule="QuickBuy" customModuleProvider="target">
+                                <rect key="frame" x="97" y="107" width="180" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                <state key="normal" title="Today">
+                                    <color key="titleColor" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="triangleColor">
+                                        <color key="value" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="triangleLeftPos">
+                                        <real key="value" value="170"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WL-Rj-82R"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Button Cross" translatesAutoresizingMaskIntoConstraints="NO" id="oUc-6z-eSP">
+                                <rect key="frame" x="25" y="356" width="325" height="295"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2,99 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLE-q5-A90">
+                                <rect key="frame" x="121" y="276" width="132" height="58"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjg-dG-IDL">
+                                <rect key="frame" x="325" y="290" width="30" height="30"/>
+                                <state key="normal" image="PlusIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk8-OK-dkP">
+                                <rect key="frame" x="23" y="294" width="24" height="22"/>
+                                <state key="normal" image="CancelIcon"/>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-AH-EHz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blP-Kr-b5U">
+                                        <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ip0-sH-gcO">
+                                                <rect key="frame" x="307" y="6" width="60" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                                <state key="normal" title="close">
+                                                    <color key="titleColor" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeDatePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c6U-Ts-hdK"/>
+                                                </connections>
+                                            </button>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qjm-Eh-7Z5">
+                                                <rect key="frame" x="0.0" y="44" width="375" height="216"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.39557470034246578" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Qjm-Eh-7Z5" id="0JK-qj-c7y"/>
+                        <outlet property="datePickerView" destination="lbc-AH-EHz" id="WYn-m3-ppn"/>
+                        <outlet property="priceLabel" destination="cZW-Sc-BaH" id="ddk-wq-mVv"/>
+                        <outlet property="selectDateButton" destination="Jne-Rg-4Sd" id="egg-FS-cyQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="387.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Button Cross" width="327" height="297"/>
+        <image name="CancelIcon" width="24" height="22"/>
+        <image name="PlusIcon" width="32" height="32"/>
+    </resources>
+</document>
