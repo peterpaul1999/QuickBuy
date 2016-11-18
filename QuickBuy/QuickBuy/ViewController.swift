@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     var shortAdds: [[String:String]] = [
         [
-            "price": "0.99€",
+            "price": "0.98€",
             "category": "AppStore"
         ],
         [
