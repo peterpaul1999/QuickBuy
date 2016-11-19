@@ -13,11 +13,11 @@ class DropDownButtonWhite : UIButton{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setImage(UIImage(named: "Triangle"), forState: .Normal)
-        tintColor = UIColor.whiteColor()
+        setImage(UIImage(named: "Triangle"), for: UIControlState())
+        tintColor = UIColor.white
         sizeToFit()
         
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageRectForContentRect(bounds).width, bottom: 0, right: 0)
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageRect(forContentRect: bounds).width, bottom: 0, right: 0)
         imageEdgeInsets = UIEdgeInsets(top: 0, left: 100, bottom: -2, right: 0)
     }
 }

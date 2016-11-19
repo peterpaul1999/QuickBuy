@@ -206,15 +206,18 @@
 					BAD1206A1DC6869000542A8F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UGTX3RCE3X;
+						LastSwiftMigration = 0810;
 					};
 					BAD120811DC6869000542A8F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UGTX3RCE3X;
+						LastSwiftMigration = 0810;
 						TestTargetID = BAD1206A1DC6869000542A8F;
 					};
 					BAD1208C1DC6869000542A8F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UGTX3RCE3X;
+						LastSwiftMigration = 0810;
 						TestTargetID = BAD1206A1DC6869000542A8F;
 					};
 				};
@@ -426,6 +429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.karg.QuickBuy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -441,6 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.karg.QuickBuy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -452,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karg.QuickBuyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickBuy.app/QuickBuy";
 			};
 			name = Debug;
@@ -464,6 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karg.QuickBuyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickBuy.app/QuickBuy";
 			};
 			name = Release;
@@ -475,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karg.QuickBuyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = QuickBuy;
 			};
 			name = Debug;
@@ -486,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karg.QuickBuyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = QuickBuy;
 			};
 			name = Release;

@@ -51,18 +51,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     ]
     
     struct DateTexts {
-        let date: NSDate
+        let date: Date
         let datetext: String
         
-        init(date: NSDate, datetext: String){
+        init(date: Date, datetext: String){
             self.date = date
             self.datetext = datetext
         }
     }
     
-    var thisDate = NSDate()
+    var thisDate = Date()
     
-    var pickerDataSource = [DateTexts(date: NSDate(), datetext: "Today")]
+    var pickerDataSource = [DateTexts(date: Date(), datetext: "Today")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +71,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Do any additional setup after loading the view, typically from a nib.
         createButtons()
         setDate()
-        selectDateButton.setTitle(self.pickerDataSource[0].datetext, forState: .Normal)
-        self.view.bringSubviewToFront(datePickerView)
+        selectDateButton.setTitle(self.pickerDataSource[0].datetext, for: UIControlState())
+        self.view.bringSubview(toFront: datePickerView)
  
     }
     
@@ -83,10 +83,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         var y: CGFloat = 375
         
         for item in shortAdds {
-            let box:ShortAddButton = ShortAddButton(frame: CGRectMake(x, y, 111, 48), labelMsg1:  item["price"]!, labelMsg2: item["category"]!)
+            let box:ShortAddButton = ShortAddButton(frame: CGRect(x: x, y: y, width: 111, height: 48), labelMsg1:  item["price"]!, labelMsg2: item["category"]!)
             box.tag = i
-            box.addTarget(self, action: #selector(ViewController.boxButtonReleased(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-            box.addTarget(self, action: #selector(ViewController.boxButtonPressed(_:)), forControlEvents: UIControlEvents.TouchDown)
+            box.addTarget(self, action: #selector(ViewController.boxButtonReleased(_:)), for: UIControlEvents.touchUpInside)
+            box.addTarget(self, action: #selector(ViewController.boxButtonPressed(_:)), for: UIControlEvents.touchDown)
             self.view.addSubview(box)
             
             i += 1
@@ -102,20 +102,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func setDate() {
         
-        let currentDate = NSDate()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
         var dateToAdd: DateTexts
         
         for i in 1...7 {
             let daysToRemove = -i
-            let newDateComponents = NSDateComponents()
+            var newDateComponents = DateComponents()
             newDateComponents.day = daysToRemove
-            let calculatedDate = NSCalendar.currentCalendar().dateByAddingComponents(newDateComponents, toDate: currentDate, options: NSCalendarOptions.init(rawValue: 0))
+            let calculatedDate = (Calendar.current as NSCalendar).date(byAdding: newDateComponents, to: currentDate, options: NSCalendar.Options.init(rawValue: 0))
             if i==1 {
                 dateToAdd = DateTexts(date: calculatedDate!, datetext: "Yesterday")
             } else {
-                let convertedDate = dateFormatter.stringFromDate(calculatedDate!)
+                let convertedDate = dateFormatter.string(from: calculatedDate!)
                 dateToAdd = DateTexts(date: calculatedDate!, datetext: convertedDate)
                 
             }
@@ -123,32 +123,32 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
-    func boxButtonPressed(sender:ShortAddButton!) {
+    func boxButtonPressed(_ sender:ShortAddButton!) {
         
-        sender.setTextColor(UIColor.lightGrayColor())
+        sender.setTextColor(UIColor.lightGray)
     }
     
-    func boxButtonReleased(sender:ShortAddButton!) {
+    func boxButtonReleased(_ sender:ShortAddButton!) {
         
         sender.setTextColor(UIColor(red:0.14, green:0.62, blue:0.52, alpha:1.0))
         priceLabel.text = sender.label1.text
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.pickerDataSource.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerDataSource[row].datetext
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        selectDateButton.setTitle(self.pickerDataSource[row].datetext, forState: .Normal)
+        selectDateButton.setTitle(self.pickerDataSource[row].datetext, for: UIControlState())
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,12 +156,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func selectDate(sender: AnyObject) {
-        datePickerView.hidden = false
+    @IBAction func selectDate(_ sender: AnyObject) {
+        datePickerView.isHidden = false
     }
 
-    @IBAction func closeDatePicker(sender: AnyObject) {
-        datePickerView.hidden = true
+    @IBAction func closeDatePicker(_ sender: AnyObject) {
+        datePickerView.isHidden = true
     }
 }
 
